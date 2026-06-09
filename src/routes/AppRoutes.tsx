@@ -2,15 +2,27 @@ import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
 
-import HomePage from "../pages/HomePage";
-import PaginationPage from "../pages/PaginationPage";
-import InfiniteScrollPage from "../pages/InfiniteScrollPage";
-import DebouncingPage from "../pages/DebouncingPage";
-import CachingPage from "../pages/CachingPage";
-import VirtualizationPage from "../pages/VirtualizationPage";
-import LazyLoadingPage from "../pages/LazyLoadingPage";
-import CodeSplittingPage from "../pages/CodeSplittingPage";
-import WebSocketPage from "../pages/WebSocketPage";
+import { lazy, Suspense } from "react";
+
+import PageLoader from "../components/common/PageLoader";
+
+const HomePage = lazy(() => import("../pages/HomePage"));
+
+const PaginationPage = lazy(() => import("../pages/PaginationPage"));
+
+const InfiniteScrollPage = lazy(() => import("../pages/InfiniteScrollPage"));
+
+const DebouncingPage = lazy(() => import("../pages/DebouncingPage"));
+
+const CachingPage = lazy(() => import("../pages/CachingPage"));
+
+const VirtualizationPage = lazy(() => import("../pages/VirtualizationPage"));
+
+const LazyLoadingPage = lazy(() => import("../pages/LazyLoadingPage"));
+
+const CodeSplittingPage = lazy(() => import("../pages/CodeSplittingPage"));
+
+const WebSocketPage = lazy(() => import("../pages/WebSocketPage"));
 
 export const router = createBrowserRouter([
   {
@@ -19,39 +31,75 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <HomePage />
+          </Suspense>
+        ),
       },
       {
         path: "pagination",
-        element: <PaginationPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <PaginationPage />
+          </Suspense>
+        ),
       },
       {
         path: "infinite-scroll",
-        element: <InfiniteScrollPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <InfiniteScrollPage />
+          </Suspense>
+        ),
       },
       {
         path: "debouncing",
-        element: <DebouncingPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <DebouncingPage />
+          </Suspense>
+        ),
       },
       {
         path: "caching",
-        element: <CachingPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <CachingPage />
+          </Suspense>
+        ),
       },
       {
         path: "virtualization",
-        element: <VirtualizationPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <VirtualizationPage />
+          </Suspense>
+        ),
       },
       {
         path: "lazy-loading",
-        element: <LazyLoadingPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <LazyLoadingPage />
+          </Suspense>
+        ),
       },
       {
         path: "code-splitting",
-        element: <CodeSplittingPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <CodeSplittingPage />
+          </Suspense>
+        ),
       },
       {
         path: "websocket",
-        element: <WebSocketPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <WebSocketPage />
+          </Suspense>
+        ),
       },
     ],
   },
