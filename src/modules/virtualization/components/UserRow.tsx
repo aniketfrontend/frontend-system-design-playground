@@ -1,22 +1,18 @@
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
 type Props = {
-  index: number;
-  style: React.CSSProperties;
-  data: {
-    users: {
-      id: number;
-      name: string;
-      email: string;
-    }[];
-  };
+  user: User;
 };
 
-const UserRow = ({ index, style, data }: Props) => {
-  const user = data.users[index];
-
+const UserRow = ({ user }: Props) => {
   return (
-    <div style={style} className="border-b px-4 flex items-center bg-white">
+    <div className="border-b px-4 h-20 flex items-center bg-white">
       <div>
-        <h3>{user.name}</h3>
+        <h3 className="font-medium">{user.name}</h3>
 
         <p className="text-gray-500">{user.email}</p>
       </div>
