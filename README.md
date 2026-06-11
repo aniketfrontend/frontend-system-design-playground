@@ -1,19 +1,34 @@
-Frontend System Design Playground
+**Frontend System Design Playground**
 
-Modules:
+**Modules:**
+
 ✅ Pagination
+
 ✅ Infinite Scroll
+
 ✅ Debouncing
+
 ✅ Caching
+
 ✅ Virtualization
+
 ✅ Lazy Loading
+
 ✅ Code Splitting
+
 ✅ WebSocket Updates
 
-Tech Stack:
+
+**Tech Stack:**
+
 React
+
 TypeScript
+
 TanStack Query
+
 TanStack Virtual
+
 Tailwind CSS
+
 React Router
