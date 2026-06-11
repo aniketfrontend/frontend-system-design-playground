@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { fetchUsers } from "../services/paginationApi";
 
-import { type User, type UsersResponse } from "../types/user.types";
+import { type UsersResponse } from "../types/user.types";
 
 export const useUsers = (page: number, limit: number) => {
   const [data, setData] = useState<UsersResponse | null>(null);
